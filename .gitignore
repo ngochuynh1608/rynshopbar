@@ -1,4 +1,4 @@
 /image
 /vqmod
 config.php
-/system/logs
+/system/logs/*
