@@ -1,0 +1,1 @@
+<?php if($setting['position'] == 'content_top') { ;?><div class="col-md-3">	<div class="box box-intro-brief">		<h2 class="title bdb ttu"><span><?php echo $heading_title;?></span></h2>		<?php echo $message; ?>	</div></div><?php } else{ ?><?php echo $message; ?><? } ?>

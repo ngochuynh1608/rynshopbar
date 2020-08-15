@@ -1,0 +1,32 @@
+<?php
+	if(isset($this->request->get['route'])){
+		$controller = $this->request->get['route'];
+		$controller = explode('/',$controller);
+		$controller = $controller[0];
+	}else{
+		$controller = 'common';
+		
+	}
+?>
+<?php if($controller == 'common') { ?>
+<div class="camera_wrap" id="slider-home">
+	<?php foreach ($banners as $banner) { ?>
+	<div data-src="<?php echo $banner['image']; ?>">
+		<div class="camera_effected">
+			<div class="container-text">   
+				<span>
+					<span class="title-banner"  ><?php echo $banner['title']; ?></span>
+					<span class="sumary" ><?php echo $banner['description']; ?></span>   
+				</span> 
+			</div> 
+		</div>
+	</div>
+	<?php } ?>
+</div>
+<?php } else{ ?>
+<div class="camera_wrap" id="slider">
+	<?php foreach ($banners as $banner) { ?>
+	<div data-src="<?php echo $banner['image'];?>"></div>
+	<?php } ?>
+</div>
+<?php } ?>

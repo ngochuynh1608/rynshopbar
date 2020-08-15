@@ -1,0 +1,141 @@
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important;
+        /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    html {
+        font-size: 80%;
+    }
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+    a[href]:after {
+        //content: " (" attr(href) ")";
+    }
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+    /*
+       * Don't show links for images, or javascript/internal links
+       */
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="/:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+    thead {
+        display: table-header-group;
+        /* h5bp.com/t */
+    }
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+    img {
+        max-width: 100% !important;
+    }
+    @page {
+        margin: 0.5cm;
+    }
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    h2,
+    h3,
+    ul,
+    img {
+        page-break-after: avoid;
+    }
+
+    .page-print .row .col-md6 {
+        width: 20% !important;
+        float: left !important;
+    }
+
+    .footer,
+    .masthead,
+    .sidebar,
+    .button-cart,
+    .buttons-set,
+    .wishlist-link,
+    .bazaarvoice-reviews,
+    .add-to-box,
+    .add-actions,
+    .actions,
+    .add-to-cart-wrapper,
+    .breadcrumbs,
+    .gallery-image,
+    .mobile-images,
+    #BVRRSummaryContainer,
+    #BVRRContainer,
+    .box-related,
+    .product-media #more-views{
+        display: none !important;
+    }
+    .print-head,
+    .gallery-image.visible{
+        display: block !important;
+    }
+    
+    .product-main-image {
+        display: block !important;
+    }
+    #product_addtocart_form {
+        margin-bottom: 0;
+    }
+    .product-main,
+    .product-media,
+    .description .truncate{
+        padding-bottom: 0;
+    }
+    .description .truncate{
+        height: auto;
+    }
+    .product-view .uses{
+        padding-top: 0;
+    }
+    .configurable-swatch-list .swatch-link{
+        font-size: 21px !important;
+    }
+    .configurable-swatch-list li {
+        min-width: 0;
+    }
+    .textured-bg{
+        padding: 20px 0 0 0;
+    }
+    .certifications{
+        padding: 0;
+    }
+    .additional-info,
+    .uses{
+        width: 100%;
+    }
+    .uses img{
+        width: auto !important;
+    }
+    .curled-corners:after,
+    .curled-corners:before{
+        display: none;
+    }
+    .double-border,
+    .double-border:after{
+        border: none;
+    }
+    .product-view .product-media, .product-view .product-main {
+        float: left!important;
+        width: 50%!important;
+    }
+}

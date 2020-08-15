@@ -1,0 +1,1 @@
+<div class="col-md-3">	<h6>Tin tức</h6>	<div class="box-footer">		<ul>			<?php  foreach($newss as $news){ ?>			<li><a href="<?php echo $news['href'];?>"><?php echo Text::word_limiter($news['name'],11);?></a></li>			<?php }?>		</ul>	</div></div>
