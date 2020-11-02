@@ -1,13 +1,7 @@
 <?php echo $header; ?>
 <section class="content">
 	<div class="container">
-		<div class="row">
-			<?php echo $content_top;?>
-		</div>	
 		<div class="row content_bottom">
-			<div class="col-md-3">
-				<?php echo $column_left;?>
-			</div>
 			<div class="col-md-9 resize">
 				<div class="product_box ">
 					<div class="row">

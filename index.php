@@ -1,6 +1,6 @@
 <?php
 
-
+error_reporting(0);
 
 // Version
 define('VERSION', '2.0.2.0');

@@ -1,5 +1,5 @@
-<div class="danhmuc">
-	<h5>Danh mục phượt</h5>
+<div class="danhmuc hidden-xs hidden-sm">
+	<h5><a href="<?php echo $all_products ;?>">Tất cả sản phẩm</a></h5>
 	<?php if(!empty($categories)){ ?>
 	<ul>
 		<?php $i=1; foreach($categories as $cate){ ?>

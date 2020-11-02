@@ -451,6 +451,12 @@ class ControllerProductProduct extends Controller {
                 {
                     $gift=utf8_substr(strip_tags(html_entity_decode($result['gift'], ENT_QUOTES, 'UTF-8')), 0, 35) . '..';
                 }
+                if((float)$result['price']){
+                	$precent = round(100 - (float)$result['special']/$result['price']*100);
+                }else{
+                	$price = 'Liên hệ';
+                	$precent = null;
+                }
 				$data['products'][] = array(
 					'product_id'  => $result['product_id'],
 					'thumb'       => $image,
@@ -463,7 +469,7 @@ class ControllerProductProduct extends Controller {
 					'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id']),
                     'gift'        => $gift,
                     'sort_description'  => html_entity_decode($result['sort_description'], ENT_QUOTES, 'UTF-8'),
-                    'percent'	  => round(100 - (float)$result['special']/$result['price']*100),
+                    'percent'	  => $precent,
 
                     'date_added'  => $result['date_added'],
                     'minimum'     => $result['minimum'] > 0 ? $result['minimum'] : 1,

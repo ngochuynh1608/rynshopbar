@@ -1,7 +1,6 @@
 @charset "IBM437";
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 /*! normalize.css v3.0.0 | HTML5 Display Definitions | MIT License | git.io/normalize */
-@import url(http://fonts.googleapis.com/css?family=Lato:300,700);
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block; }
 
 audio, canvas, progress, video { display: inline-block; vertical-align: baseline; }
@@ -859,7 +858,7 @@ a.link:hover { border-bottom-color: #0092dc; }
 *    BUTTON
 *
 ***************************************************/
-a.btn, button.btn { padding: 7px 12px; color: #FFF; text-transform: uppercase; font-size: 14px; font-family: "Roboto", sans-serif; background-color: #0092dc; border: none; display: inline-block; vertical-align: middle; *vertical-align: auto; *zoom: 1; *display: inline; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; }
+a.btn, button.btn {color: #FFF; text-transform: uppercase; font-size: 14px; font-family: "Roboto", sans-serif; background-color: #0092dc; border: none; display: inline-block; vertical-align: middle; *vertical-align: auto; *zoom: 1; *display: inline; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; }
 a.btn:hover, button.btn:hover { background-color: #8f4bbc; color: #fff; }
 a.btn-only-icon, button.btn-only-icon { background: none !important; padding: 0; }
 a.btn-inverse, button.btn-inverse { background-color: #282828; }

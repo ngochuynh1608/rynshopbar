@@ -15,7 +15,7 @@ $(document).ready(function(){
         pager:false,
         moveSlides:1,
     });
-    
+
     $('.plus').click(function(){
         var id=$(this).attr("id");
         $('.'+id).slideToggle();

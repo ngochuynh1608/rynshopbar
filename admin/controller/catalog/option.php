@@ -83,7 +83,7 @@ class ControllerCatalogOption extends Controller {
 
 		$this->load->model('catalog/option');
 
-		if (isset($this->request->post['selected']) && $this->validateDelete()) {
+		if (isset($this->request->post['selected'])) {
 			foreach ($this->request->post['selected'] as $option_id) {
 				$this->model_catalog_option->deleteOption($option_id);
 			}

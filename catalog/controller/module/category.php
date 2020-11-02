@@ -54,7 +54,6 @@ class ControllerModuleCategory extends Controller {
 				'filter_category_id'  => $category['category_id'],
 				'filter_sub_category' => true
 			);
-
 			$data['categories'][] = array(
 				'category_id' => $category['category_id'],
 				'name'        => $category['name'] ,
@@ -63,7 +62,7 @@ class ControllerModuleCategory extends Controller {
 			);
 			}
 		}
-
+		$data['all_products'] =  $this->url->link('product/category', 'path=all');
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/module/category.tpl')) {
 			return $this->load->view($this->config->get('config_template') . '/template/module/category.tpl', $data);
 		} else {

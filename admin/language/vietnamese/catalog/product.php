@@ -113,7 +113,7 @@ $_['entry_price']            = 'Giá:';
 
 $_['entry_tax_class']        = 'Loại Thuế:';
 
-$_['entry_points']           = 'Điểm:<br/>Số điểm cần thiết để mua mặt hàng này. Nếu bạn không \'muốn sản phẩm này được mua với điểm để là 0.';
+$_['entry_points']           = 'Điểm:<br/>Số điểm cần thiết để mua mặt hàng này. Nếu bạn không muốn sản phẩm này được mua với điểm để là 0.';
 
 $_['entry_option_points']    = 'Điểm:';
 

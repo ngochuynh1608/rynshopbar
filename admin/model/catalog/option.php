@@ -70,6 +70,8 @@ class ModelCatalogOption extends Model {
 		$this->db->query("DELETE FROM " . DB_PREFIX . "option_value WHERE option_id = '" . (int)$option_id . "'");
 		$this->db->query("DELETE FROM " . DB_PREFIX . "option_value_description WHERE option_id = '" . (int)$option_id . "'");
 
+		$this->db->query("DELETE FROM " . DB_PREFIX . "product_option  WHERE option_id = '" . (int)$option_id . "'");
+
 		$this->event->trigger('post.admin.option.delete', $option_id);
 	}
 

@@ -18,34 +18,35 @@
 					<?php $i=0; foreach ($breadcrumbs as $breadcrumb) { $i++; ?>
 						<li>
 							<?php if($i== count($breadcrumbs)){ ?>
-								<?php echo Text::word_limiter($breadcrumb['text'],10); ?>
+								<?php echo $breadcrumb['text']; ?>
 							<?php }else { ?>
-							<a href="<?php echo $breadcrumb['href']; ?>"><?php echo Text::word_limiter($breadcrumb['text'],10); ?></a>
+							<a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
 							<?php } ?>
 						</li>
 					<?php } ?>
 				</ol>
 				<?php if ($products) { ?>
-				<ul class="result-search">					
+				<div class="row result-search ">					
 					<?php foreach ($products as $product) { ?>
-					<li>
-						<a href="<?php echo $product['href']; ?>" class="wrap-product-image"><img src="<?php echo $product['thumb']; ?>" alt=""></a>
-						<div class="product-info">
-							<a href="<?php echo $product['href']; ?>" class="product-name"><?php echo $product['name']; ?></a>
-							<?php if (!$product['special']) { ?>
-							<div class="product-price"><?php echo $product['price']; ?></div>
-							<?php } else { ?>
-							<p class="price-old"><?php echo $product['price']; ?></p> 
-							<div class="product-price"><?php echo $product['special']; ?></div>
-							<?php } ?>
+					<div class="col-lg-6 col-md-6 col-xs-12 ">
+						<div class="product-search">
+							<a href="<?php echo $product['href']; ?>" class="wrap-product-image"><img src="<?php echo $product['thumb']; ?>" alt=""></a>
+							<div class="product-info">
+								<a href="<?php echo $product['href']; ?>" class="product-name"><?php echo $product['name']; ?></a>
+								<?php if (!$product['special']) { ?>
+								<div class="product-price"><?php echo $product['price']; ?></div>
+								<?php } else { ?>
+								<p class="price-old"><?php echo $product['price']; ?></p> 
+								<div class="product-price"><?php echo $product['special']; ?></div>
+								<?php } ?>
+							</div>
+							<div class="pull-right">
+								<a href="javascript:void(0);" onclick="addToCart('<?php echo $product['product_id']; ?>');" class="btn">Thêm vào giỏ hàng</a>
+							</div>
 						</div>
-						<div class="pull-right">
-							<a href="javascript:void(0);" onclick="addToCart('<?php echo $product['product_id']; ?>');" class="btn">Thêm vào giỏ hàng</a>
-							<a href="javascript:void(0);" onclick="addToWishList('<?php echo $product['product_id']; ?>');" class="btn">Thêm vào yêu thích</a>
-						</div>
-					</li>
+					</div>
 					<?php } ?>					
-				</ul>
+				</div>
 				<?php } else { ?>
 				<div class="content"><?php echo $text_empty; ?></div>
 				<?php } ?>

@@ -1,5 +1,7 @@
 @media (min-width: 1200px) {
 
+    iframe{width: 50%}
+
 }
 @media (max-width: 1200px) {
 
@@ -17,6 +19,9 @@
     }
     .navigation {
         display: none;
+    }
+    .product_item{
+        height: 405px;
     }
 
 }
@@ -40,6 +45,7 @@
     .product_item .cart a{
         margin-left:0px;
     }
+    iframe{max-width: 100%}
 }
 @media (max-width: 320px) {
     .gt{

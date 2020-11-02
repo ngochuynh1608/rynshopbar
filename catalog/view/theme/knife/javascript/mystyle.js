@@ -215,3 +215,26 @@ function addToCompare(product_id) {
 		}
 	});
 }
+
+function removeCart(key) {
+    
+	    $.ajax({
+	        url: 'index.php?route=checkout/cart/remove',
+	        type: 'post',
+	        data: 'key=' + key,
+	        dataType: 'json',       
+	        success: function(json) {
+	            // Need to set timeout otherwise it wont update the total
+	            setTimeout(function () {
+	                $j('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+	            }, 100);
+	            if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
+	                location = 'index.php?route=checkout/cart';
+	            }else{
+	                 $j('#mini-cart').load('index.php?route=common/cart/info'); 
+	            }
+	            
+	            
+	        }
+	    });
+}

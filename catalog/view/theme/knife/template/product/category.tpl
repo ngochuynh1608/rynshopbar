@@ -25,7 +25,7 @@
 								</ol>
                             </div> 
 							<?php foreach ($products as $product) { ?>
-								<div class="col-md-3 col-sm-6">
+								<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
 									<div class="product_item">
 										<a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>"/>
 										</a>

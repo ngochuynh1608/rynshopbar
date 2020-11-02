@@ -26,9 +26,9 @@
 					<?php $i=0; foreach ($breadcrumbs as $breadcrumb) { $i++; ?>
 						<li>
 							<?php if($i== count($breadcrumbs)){ ?>
-								<?php echo Text::word_limiter($breadcrumb['text'],10); ?>
+								<?php echo $breadcrumb['text']; ?>
 							<?php }else { ?>
-							<a href="<?php echo $breadcrumb['href']; ?>"><?php echo Text::word_limiter($breadcrumb['text'],10); ?></a>
+							<a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
 							<?php } ?>
 						</li>
 					<?php } ?>
@@ -66,7 +66,7 @@
 										
 									</div>
 									<button type="submit" class="btn btn-refresh"><i class="glyphicon glyphicon-refresh"></i></button>
-									<a href="<?php echo $product['remove']; ?>" class="btn btn-inverse btn-remove"><i class="glyphicon glyphicon-remove"></i></a>																		
+                                    <button type="button" onclick="removeCart('<?php echo $product['key']; ?>');" title="<?php echo $button_remove; ?>" class=""><i class="fa fa-times"></i></button>																
 
 								</td>
 								<td data-title="Đơn giá" class="price"><?php echo $product['price']; ?></td>

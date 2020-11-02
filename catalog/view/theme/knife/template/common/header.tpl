@@ -36,17 +36,42 @@
 </head>
 
 <body>
+<!-- Load Facebook SDK for JavaScript -->
+      <div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v8.0'
+          });
+        };
+
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      <!-- Your Chat Plugin code -->
+      <div class="fb-customerchat"
+        attribution=setup_tool
+        page_id="1738842989740127"
+  logged_in_greeting="Chào bạn , RynShopBar có thể giúp gì được cho bạn ?"
+  logged_out_greeting="Chào bạn , RynShopBar có thể giúp gì được cho bạn ?">
+      </div>
     <section class="header">
         <div class="bg_header"></div>
         <div class="container">
             <div class="row">
                 <div class="top_header">
-                    <div class="col-md-2 col-xs-12">
+                    <div class="col-md-2 col-sm-2 col-xs-4 ">
                         <div class="logo">
                             <a href="<?php echo $home;?>"><img src="<?php echo $logo;?>" /></a>
                         </div>
                     </div>
-                    <div class="col-md-5 col-xs-12 hidden_small">
+                    <div class="col-md-5 col-sm-4 col-xs-12 hidden_small">
                         <div class="slogan">
                              <ul>
                                 <li><img src="catalog/view/theme/knife/images/icon_car.png" />Miễn Phí Giao Hàng</li>
@@ -54,8 +79,8 @@
                              </ul>
                         </div>
                     </div>
-                    <div class="col-md-3 col-xs-12" >
-	                    <div class="search hidden_small">
+                    <div class="col-md-3 col-sm-3 col-xs-8" >
+	                    <div class="search">
 	                        <form class="form-search-liquid">
 	                            <input name='search' class="search" type="text" onfocus="if(this.value =='Tìm kiếm...' ) this.value=''" onblur="if(this.value=='') this.value='Tìm kiếm...'" value="Tìm kiếm..." />
 	                            <i class="fa fa-search icon-libs icon-search"></i>
@@ -63,7 +88,7 @@
 	                    </div>
 
                     </div>
-                    <div class="col-md-2 col-xs-12" >
+                    <div class="col-md-2 col-sm-3 col-xs-12" >
                         <div class="shopping-cart">
 				            <?php echo $cart_mini;?>
                             <div class="popup-shopping-cart" id="popup-shopping-cart">
@@ -75,37 +100,10 @@
             </div>
         </div>     
     </section>
-    <section class="menu">
+    <section class="menu di">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="navigation">
-						<ul class="main">
-							<?php if ($categories) { ?>
-								<?php foreach ($categories as $category) { ?>
-								<?php if (!empty($category['children'])) { ?>
-								<li class="has-submenu <?php if ($category['active'] == 'active') {
-									echo 'active';
-									}?>"><a href="<?php echo $category['href']; ?>" >
-								<?php } else { ?>
-								<li <?php if ($category['active'] == 'active') {
-									echo 'class="active"';
-									}?>><a href="<?php echo $category['href']; ?>" >
-								<?php } ?>
-									<?php echo $category['name']; ?></a>
-									<?php if (!empty($category['children'])) { ?>
-										<ul class="style-one effect-one">
-										  <?php foreach($category['children'] as $item):?>
-											  <li><a href="<?php echo $item['href']; ?>"><?php echo $item['name']; ?></a>
-											  </li>
-										  <?php endforeach; ?>
-										</ul>
-									<?php } ?>
-								</li>
-								<?php } ?>							  
-							<?php } ?>
-						</ul>                 
-                    </div>
 						<a href="#" class="btn-trigger-responsive" id="btn-trigger-responsive">
 						    <span class="text">Menu</span>
 						    <span class="wrap-icon-bar">
@@ -115,6 +113,7 @@
 						    </span>
 					    </a>
 						<ul class="menu-toggle-responsive">
+							<li><a href="<?php echo $all_products; ?>">Tất cả sản phẩm</a></li>
 							<?php if ($categories) { ?>
 								<?php foreach ($categories as $category) { ?>
 								<?php if (!empty($category['children'])) { ?>

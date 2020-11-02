@@ -27,6 +27,20 @@ class ControllerModuleSlideshow extends Controller {
 
 		$data['module'] = $module++;
 
+		$this->load->model('catalog/manufacturer');
+
+		$manufacturers = $this->model_catalog_manufacturer->getManufacturers();
+		if(!empty($manufacturers)){
+			foreach ($manufacturers as $manufacturer) {
+				if (is_file(DIR_IMAGE . $manufacturer['image'])) {
+					$data['manufacturers'][] = array(
+						'href'  => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $manufacturer['manufacturer_id']),
+						'image' => $this->model_tool_image->resize($manufacturer['image'],150, 55,'w')
+					);
+				}
+			}
+		}
+
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/module/slideshow.tpl')) {
 			return $this->load->view($this->config->get('config_template') . '/template/module/slideshow.tpl', $data);
 		} else {

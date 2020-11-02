@@ -106,7 +106,7 @@ class ControllerCommonHeader extends Controller {
 		$data['categories'] = array();
 
 		$categories = $this->model_catalog_category->getCategories(0);
-
+		
 		foreach ($categories as $category) {
 			if ($category['top']) {
 				// Level 2
@@ -209,7 +209,7 @@ class ControllerCommonHeader extends Controller {
 				);
 			}
 		}
-
+		
 		$data['language'] = $this->load->controller('common/language');
 		$data['currency'] = $this->load->controller('common/currency');
 		$data['search'] = $this->load->controller('common/search');
@@ -271,12 +271,11 @@ class ControllerCommonHeader extends Controller {
 			} else {
 				$image = '';
 			}
-							
 			$option_data = array();
 			
 			foreach ($product['option'] as $option) {
 				if ($option['type'] != 'file') {
-					$value = $option['option_value'];	
+					$value = $option['value'];	
 				} else {
 					$filename = $this->encryption->decrypt($option['option_value']);
 					
@@ -403,7 +402,7 @@ class ControllerCommonHeader extends Controller {
     				}
 		 	}			
         }
-        
+        $data['all_products'] =  $this->url->link('product/category', 'path=all');
 		$data['cart'] = $this->url->link('checkout/cart');
 		$data['checkout'] = $this->url->link('checkout/checkout');
         $data['information_href'] = $this->url->link('information/information', 'information_id=4');
